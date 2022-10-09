@@ -21,5 +21,10 @@ echo "console.log('Hello World\!\!\!')" > src/app.ts
 yarn tsc
 ----
 
-To define the GraphQL server
-https://blog.logrocket.com/build-graphql-app-node-js-typescript-graphql-request/
+To work with GraphQL client
+https://github.com/prisma-labs/graphql-request
+
+[source,sh]
+----
+yarn add graphql-request graphql
+----
