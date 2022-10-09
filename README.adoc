@@ -1,0 +1,25 @@
+= Yarn GraphQL example
+
+To configure project
+https://losikov.medium.com/part-1-project-initial-setup-typescript-node-js-31ba3aa7fbf1
+
+[source,sh]
+----
+yarn init -y
+
+yarn add @types/node typescript 
+yarn add -D ts-node
+
+# creating tsconfig.json
+yarn tsc --init --rootDir src --outDir ./bin --esModuleInterop --lib ES2019 \
+  --module commonjs --noImplicitAny true
+
+mkdir src
+echo "console.log('Hello World\!\!\!')" > src/app.ts
+
+# building the application  
+yarn tsc
+----
+
+To define the GraphQL server
+https://blog.logrocket.com/build-graphql-app-node-js-typescript-graphql-request/
