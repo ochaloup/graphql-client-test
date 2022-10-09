@@ -22,9 +22,26 @@ yarn tsc
 ----
 
 To work with GraphQL client
-https://github.com/prisma-labs/graphql-request
+https://github.com/prisma-labs/graphql-request  
 
 [source,sh]
 ----
 yarn add graphql-request graphql
 ----
+
+== Start the Gatsby project
+
+This project works with Gatsby testing project.
+
+[source,sh]
+----
+git clone https://github.com/ochaloup/gatsby-from-scratch
+
+cd gatsby-from-scratch
+yarn dev
+----
+
+The GraphQL GUI of Gatsby data available at
+http://localhost:9988/___graphql
+
+The URL for GraphQL request from client to the same URL.
