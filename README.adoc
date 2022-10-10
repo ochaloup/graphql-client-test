@@ -1,6 +1,6 @@
-= Yarn GraphQL example
+= GraphQL client example
 
-To configure project
+To configure project the Typescript project with Yarn
 https://losikov.medium.com/part-1-project-initial-setup-typescript-node-js-31ba3aa7fbf1
 
 [source,sh]

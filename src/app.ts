@@ -31,7 +31,7 @@ interface Document {
 
 interface PageAttributes {
   category?: string
-  tags?: Array<string>
+  tags?: string
 }
 
 const query = gql`
@@ -53,12 +53,12 @@ const query = gql`
 `
 
 request(GRAPHQL_URL, query).then((data: QueryResult) => {
-  data?.allAsciidoc?.edges?.map((e: Edge, i) => e.node.pageAttributes?.tags)
-    .flatMap(t => { console.log(`${typeof t}`); return t.flatMap(gg => gg.split(","))})
-    .forEach(ii => {console.log(ii)});
-  
-  // forEach((e: Edge) =>  {
-  //   console.log(">>>")
-  //   console.log(e.node.pageAttributes?.tags)
-  // })
+  const countedTags = data?.allAsciidoc?.edges?.flatMap(
+      (e: Edge, i) => e.node.pageAttributes?.tags?.split(",").map(t => t.trim())
+    )
+    .reduce((map, value, index, array) => {
+      if (value === undefined) return map;
+      return map.set(value, (map.get(value) || 0) + 1);
+    }, new Map<string, number>());
+  console.log(">>> ", countedTags);
 })
